@@ -7,7 +7,7 @@ The simple schedule telegram bot.
 3. Create a new `.env` file
 4. Complete the fields in the `.env` file:
 - `BOT_TOKEN=your bot token`
-- `ADMIN_GROUP=your admin_group id`
+- `GROUP=your group id`
 5. Save a `.env` file
 
 ## Usage

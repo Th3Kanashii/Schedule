@@ -36,4 +36,4 @@ async def on_startup(bot: Bot, group: str) -> None:
                     break
 
         # Sleep for 30 seconds before checking the schedule again
-        await asyncio.sleep(5)
+        await asyncio.sleep(30)

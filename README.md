@@ -1,5 +1,5 @@
 # Schedule
-The simple schedule telegram bot.
+A simple Telegram bot to get the schedule
 ## Installation
 
 1. Clone the repository `git clone https://github.com/Th3Kanashii/Schedule.git`

@@ -78,5 +78,5 @@ async def parse_schedule(url: str) -> None:
             schedule_data[date] = pairs_list
 
     # Save the schedule data as a JSON file
-    with open("/home/kanashii/Projects/Notify/schedule.json", "w", encoding="utf-8") as json_file:
+    with open("/home/kanashii/Projects/Schedule/schedule.json", "w", encoding="utf-8") as json_file:
         json.dump(schedule_data, json_file, ensure_ascii=False, indent=4)

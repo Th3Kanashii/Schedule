@@ -13,6 +13,5 @@ async def command_schedule(message: types.Message) -> None:
 
     :param message: The message from Telegram.
     """
-    print(message)
     text = get_schedule()
     await message.answer(text=text)

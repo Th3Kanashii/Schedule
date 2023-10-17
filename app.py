@@ -3,6 +3,7 @@ import asyncio
 
 from aiogram import Bot, Dispatcher
 from aiogram.enums import ParseMode
+from aiogram.methods import DeleteWebhook
 
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 
@@ -22,7 +23,7 @@ async def main() -> None:
         parse_schedule,
         args=["https://asu.pnu.edu.ua/static/groups/1002/014734/"],
         trigger="cron",
-        day_of_week="fri",
+        day_of_week="sat",
         hour=15,
         minute=0
     )
@@ -33,9 +34,10 @@ async def main() -> None:
 
     dp.include_routers(*routers_list)
 
+    await bot(DeleteWebhook(drop_pending_updates=True))
     await asyncio.gather(
         dp.start_polling(bot),
-        on_startup(bot)
+        on_startup(bot, config.tg_bot.group)
     )
 
 

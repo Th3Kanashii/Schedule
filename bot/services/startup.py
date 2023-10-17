@@ -7,13 +7,14 @@ from aiogram import Bot
 from bot.services.schedule import get_schedule
 
 
-async def on_startup(bot: Bot) -> None:
+async def on_startup(bot: Bot, group: str) -> None:
     """
     Sends scheduled messages to a specific chat on bot startup.
 
     :param bot: The bot object used to interact with the Telegram API.
+    :param group: The unique group id
     """
-    schedule_file_path = "/home/kanashii/Projects/Notify/schedule.json"
+    schedule_file_path = "/home/kanashii/Projects/Schedule/schedule.json"
 
     # Read the schedule data from the JSON file
     with open(schedule_file_path, "r") as schedule_file:
@@ -30,7 +31,7 @@ async def on_startup(bot: Bot) -> None:
             for item in values:
                 # If the time matches the current date, send a message
                 if time == current_date_str and item["Час"].split("-")[0] == current_time:
-                    await bot.send_message(chat_id=1445823120, text=text)
+                    await bot.send_message(chat_id=group, text=text)
                     await asyncio.sleep(82800)
                     break
 

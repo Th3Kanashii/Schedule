@@ -1,0 +1,5 @@
+aiogram>=3.0.0
+beautifulsoup4>=4.12.2
+selenium>=4.14.0
+environs>=9.0
+APScheduler>=3.10.4

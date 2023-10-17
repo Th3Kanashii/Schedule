@@ -8,7 +8,7 @@ def get_schedule() -> str:
 
     :return: A formatted text containing the schedule for the current date, or a message indicating it's a day off.
     """
-    schedule_file_path = "/home/kanashii/Projects/Schedule/schedule.json"
+    schedule_file_path = "/root/Schedule/schedule.json"
 
     # Open the JSON file with the schedule.
     with open(schedule_file_path, "r") as schedule_file:

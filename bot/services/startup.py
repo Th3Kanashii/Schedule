@@ -14,7 +14,7 @@ async def on_startup(bot: Bot, group: str) -> None:
     :param bot: The bot object used to interact with the Telegram API.
     :param group: The unique group id
     """
-    schedule_file_path = "/home/kanashii/Projects/Schedule/schedule.json"
+    schedule_file_path = "/root/Schedule/schedule.json"
 
     # Read the schedule data from the JSON file
     with open(schedule_file_path, "r") as schedule_file:

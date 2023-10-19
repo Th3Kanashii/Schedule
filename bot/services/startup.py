@@ -22,17 +22,20 @@ async def on_startup(bot: Bot, group: str) -> None:
 
     # Continuously check the schedule for messages to send
     while True:
-        text = get_schedule()
         current_date = datetime.date.today()
         current_time = datetime.datetime.now().strftime("%H:%M")
         current_date_str = current_date.strftime("%d.%m.%Y")
         for key, values in schedule_data.items():
             time = key.split(" ")[0]
             for item in values:
+                schedule_time = item["Час"].split("-")[0]
+                time_pair = schedule_time.split(":")
+                new_time_pair = f"{int(time_pair[0])}:{int(time_pair[1]) - 5}"
                 # If the time matches the current date, send a message
-                if time == current_date_str and item["Час"].split("-")[0] == current_time:
+                if time == current_date_str and new_time_pair == current_time:
+                    text = get_schedule()
                     await bot.send_message(chat_id=group, text=text)
-                    await asyncio.sleep(82800)
+                    await asyncio.sleep(36000)
                     break
 
         # Sleep for 30 seconds before checking the schedule again

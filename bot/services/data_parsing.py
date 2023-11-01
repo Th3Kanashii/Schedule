@@ -80,3 +80,7 @@ async def parse_schedule(url: str) -> None:
     # Save the schedule data as a JSON file
     with open("/root/Schedule/schedule.json", "w", encoding="utf-8") as json_file:
         json.dump(schedule_data, json_file, ensure_ascii=False, indent=4)
+
+
+if __name__ == "__main__":
+    asyncio.run(parse_schedule(url="https://asu.pnu.edu.ua/static/groups/1002/014734/"))
